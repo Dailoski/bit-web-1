@@ -1,0 +1,47 @@
+body{
+    font-family: sans-serif;
+}
+
+h1{
+    color: rgb(182, 15, 15);
+    margin: 0px auto;
+    text-align: center;
+    vertical-align: top;
+    padding-bottom: 50px;
+    font-size: 70px;
+}
+
+table{
+    width: 600px;
+    border-collapse: collapse;
+    margin: 0px auto;    
+}
+
+th{
+    background-color: rgb(182, 15, 15);
+    color: white;
+    padding: 10px 0px;
+}
+
+td{
+    padding: 10px 0px;    
+}
+
+img{
+    height: 100px;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(233, 224, 224);
+}
+
+tr:hover{
+    background-color: rgb(236, 151, 24);
+}
+
+
+.image-cell{
+    text-align: center;
+}
+
+

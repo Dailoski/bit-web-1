@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Manuale|Ubuntu');
+
+body{
+    margin: 100px;
+}
+
+#first{
+    background-color: yellow;
+    width: 400px;
+    height: 500px;
+    max-width: 300px;
+    overflow: hidden;
+    font-family: 'Manuale', serif;
+    color:blue;
+    box-shadow: 2px 2px 2px #000000;   
+    padding: 20px 70px;
+    text-align: justify;
+}
+
+#second{
+    background-color: red;
+    width: 600px;
+    height: 300px;
+    max-height: 200px;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: oblique;
+    box-shadow: 2px 2px 2px red;   
+    text-align: justify;
+    margin-top: 50px;     
+}
+#second::selection {
+    background-color: yellow;
+    color:red;
+    
+
+}
+
+h1{
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;
+    color:yellow;
+    font-size: 50px;
+    margin: 5px 55px;
+}
+
+
+h1:hover{
+    color:red;
+    text-shadow: 2px 2px 2px black;
+}

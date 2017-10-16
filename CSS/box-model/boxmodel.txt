@@ -1,0 +1,56 @@
+BOX MODEL
+
+Dimensions
+
+- width i height u procentima se definise u odnosu na roditelja
+-  max-width -maximalna sirina koju mozemo da damo nekom elementu na 
+stranici  
+- min-width minimalna sirina koju nekom elementu dajemo, ispod toga 
+element se ne skuplja
+- sirina je odredjena prema sadrzaju elementa
+- min and max height -
+ako je text veci od max visine i max sirine elementa, prelice se preko
+elementa OVERFLOW
+
+overflow  - hidden or scroll
+ili da skrolujemo sadrzaj ili da ga sakrijemo
+
+Border, Margine and Padding
+
+ content > padding > border > margine > outline
+
+border - prema pixelima 
+       - thick, thin, medium
+       - border - definisemo sve 4.
+         top> right> bottom> left (prema kretanju kazaljki)
+       - kad su tri definisane gore, dole i jedna za levo i desno
+       - kad su dve definisane gore i dole; levo i desno
+       - kad je jedna definisana sve cetri
+
+       border - style: 
+
+padding: px,em or %
+         
+margin : auto znaci da automatski setuje element po sredini levo i desno u odnosu na stranicu 
+
+Inline - block elements
+
+display - inline,block, inline-block,none
+display inline-block za blok elemenet da ostanu blok al da idu jedan pored
+drugog u liniju
+
+vertical-align top je poravnanje inline block elemenata po top-u
+
+Hiding boxes 
+
+visibility: hidden/visible - ostaje praaznina iza elementa ne popunjava
+se njegovo mesto narednim elementom
+kod display none onda nestaje i prostor od elementa i popunjava se sa narednim
+elementom
+
+Box shadow - definisanje senke za element 
+nije podrzan kod svih browsera
+-moz-box-shadow za mozilu
+-webkit-box-shadow
+
+

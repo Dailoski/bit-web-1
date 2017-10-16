@@ -1,0 +1,14 @@
+List Marker Style
+
+list-style-type
+none, disc, circle, square ...
+
+decimal, upper-alpha, lower-alpha etc.
+
+list-style-image: url do slike - mora da bude tacnih dimenzija 
+posto ne moze da joj se menja visina i sirina u css-u
+
+list-style-position
+
+pozicija izmedju bulleta i texta - inside(default) ili outside
+

@@ -1,0 +1,18 @@
+#first{
+    list-style-type: circle;
+}
+#second{
+    list-style-type: square;
+}
+#third{
+    list-style-type: lower-alpha;
+}
+#fourth{
+    list-style-type: upper-roman;
+}
+
+#imagetobe{
+    list-style-type: none;
+    list-style-image: url('http://www.chinadaily.com.cn/business/tplimages/99323.files/more_art.gif');
+    width: 450px;
+}
