@@ -1,0 +1,79 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-image: url('back.png');
+}
+main{
+    width: 80%;
+    margin: 0px auto;
+}
+
+article {
+    margin-bottom: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    animation-name: example;
+    animation-duration: 4s;
+    position: relative;
+}
+img{
+    width: 100%;
+    padding: 3px;
+}
+h1{
+    text-align: center;
+    font-size: 4em;
+    font-style: italic;
+    padding-bottom: 50px;
+    color: white;
+    transition: all 1s;
+
+}
+@media (min-width:576px){
+    img{
+        width: 30%; 
+        float:left;
+        
+        
+    }
+    article > p{
+        float:left;
+        width: 68%;
+    }
+   article::after{
+       content: '';
+       display: block;
+       clear: both;
+   }
+    
+}
+@media (min-width:768px){
+    
+    main{
+        margin-top: 100px;
+    }
+    article {
+        float: left;
+        width: 30%;
+        box-sizing: border-box;
+        padding: 1px;
+        margin-left: 20px;            
+    }
+    img{
+        width: 100%;
+    }
+    article > p{
+        width: 100%;
+    }
+      
+}
+@keyframes example {
+        100% {top:200px;}
+    
+}
+
