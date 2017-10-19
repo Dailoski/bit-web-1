@@ -1,0 +1,84 @@
+@import 'footer';
+@media (min-width:768px){
+    header{
+        position: relative;
+    }
+    #logo span{
+        border-top: 3px solid $to-white;
+        border-left: 3px solid $to-white;
+        border-bottom: 3px solid $to-white;
+    }
+    #logo{
+        color: $to-white;  
+        position: absolute;
+        top: 0px;
+        left: 30px;      
+    }
+    nav {
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        background-color: transparent;
+    } 
+    nav li:hover{
+            border: 1px solid $to-white; 
+            background-color: transparent;  
+        }    
+    nav li{
+        display: inline-block;
+        background-color: transparent;        
+    }
+    .who-are-we-tablet{
+        float: left;
+        width: 50%;
+        vertical-align: top;
+        margin: 0px;
+    }
+    
+    .building {
+        width: 50%;   
+    }
+    .who-are-we-tablet ul{
+        margin: 0px;
+    }
+    .all-people{
+        width: 100%;
+       
+    }
+    .people{
+        width: 40%;
+        float: left;
+    }
+    
+    
+    .all-people::after{
+        content: "";
+        display: block;
+        clear: both;
+        
+    }
+    .contact-box{
+        width: 100%;
+        margin: 0px;
+    }
+    .box{
+        width: 40%;
+        height: 170px;
+        float: left;
+    }
+    .main-footer{
+        width: 100%;
+        margin: 0px auto;
+    }
+    input{
+        display: inline;
+        box-sizing: border-box;
+        width: 32%;
+        margin-left: 6px;
+        
+    }
+    #phone{
+        margin-left: 0px;
+    }
+}
+

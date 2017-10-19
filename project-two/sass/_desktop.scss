@@ -1,0 +1,43 @@
+@media (min-width:1024px) {
+    .in-head-cell> h1{
+        font-size: 3em;
+    }
+    .building{
+        width: 30%;
+        min-height:400px;
+        display: block;
+        float: left;
+    }
+    .one-third-desktop{
+        width: 30%;
+        float: left;
+        padding-left:10px; 
+    }
+    .who-are-we-tablet{
+        width: 30%;
+        float: left;
+    }
+    .desktop-view{
+        content: "";
+        clear: both;
+        display: block;
+    }
+    .people-say{
+        clear: both;
+    }
+    .all-people{
+        width: 100%;
+        margin: 0px auto;
+    }
+    .people{
+        width: 30%;
+        box-sizing: border-box;
+        margin: 5px;
+        float: left;
+    }
+    .box{
+        width: 25%;
+        box-sizing: border-box;
+
+    }
+}
