@@ -1,0 +1,17 @@
+img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+    color: rgb(150, 29, 29);
+    padding: 30px;
+    letter-spacing: 8px;
+    font-family: fantasy;
+}
+p{
+    text-align: justify;
+}
