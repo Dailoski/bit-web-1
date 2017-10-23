@@ -1,0 +1,54 @@
+.bg-light{
+    background-color: $Blueish !important;
+    color: white !important;
+}
+.navbar-light {
+    .navbar-brand{
+        color: white;
+        
+    }
+    .navbar-toggler{
+        color: white;
+        background-color: $Greenish;
+    }
+    .navbar-toggler-icon{
+        color: white;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Menu%2C_Web_Fundamentals_%28White%29.svg/2000px-Menu%2C_Web_Fundamentals_%28White%29.svg.png');
+        background-size: 80% 80%;
+    }
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link
+.navbarNavAltMarkup{
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+
+header{
+    background-color: $Greenish;
+    color: white;
+    .profile{
+        padding: 20px;
+        text-align: center;
+        h1{
+            padding: 20px;
+           
+        
+        }
+        p{
+            padding:20px; 
+        }
+    }
+    @media (min-width:768px){
+        .profile{
+            h1{
+            font-size: 4em;
+            font-weight:600;
+            }
+                        
+        }
+       
+    }    
+}
+

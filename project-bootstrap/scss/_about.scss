@@ -1,0 +1,28 @@
+.about{
+    background-color: $Greenish;
+    color: white;
+    padding: 30px;
+    .centar{
+        text-align: center;
+    }
+    
+}
+h2{
+    text-align: center;
+    padding: 10px;
+   
+}
+i{
+    text-align: center;
+}
+p{
+    padding: 10px;
+}
+.btn{
+    background-color: $Greenish;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 10px;
+    margin: 0px auto;
+    display: block;
+}

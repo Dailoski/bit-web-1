@@ -1,0 +1,15 @@
+$Greenish: #18bc9c;
+$Blueish: #2c3e50;
+$forForm: #495057;
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import 'heading';
+@import 'portfolio';
+@import 'about';
+@import 'contact';
+@import 'footer';

@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato', sans-serif; }
+
+.bg-light {
+  background-color: #2c3e50 !important;
+  color: white !important; }
+
+.navbar-light .navbar-brand {
+  color: white; }
+.navbar-light .navbar-toggler {
+  color: white;
+  background-color: #18bc9c; }
+.navbar-light .navbar-toggler-icon {
+  color: white;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Menu%2C_Web_Fundamentals_%28White%29.svg/2000px-Menu%2C_Web_Fundamentals_%28White%29.svg.png");
+  background-size: 80% 80%; }
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link
+.navbarNavAltMarkup {
+  color: white; }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white; }
+
+header {
+  background-color: #18bc9c;
+  color: white; }
+  header .profile {
+    padding: 20px;
+    text-align: center; }
+    header .profile h1 {
+      padding: 20px; }
+    header .profile p {
+      padding: 20px; }
+  @media (min-width: 768px) {
+    header .profile h1 {
+      font-size: 4em;
+      font-weight: 600; } }
+
+.portfolio {
+  text-align: center;
+  padding: 40px; }
+  .portfolio img {
+    width: 100%;
+    padding: 10px; }
+
+.about {
+  background-color: #18bc9c;
+  color: white;
+  padding: 30px; }
+  .about .centar {
+    text-align: center; }
+
+h2 {
+  text-align: center;
+  padding: 10px; }
+
+i {
+  text-align: center; }
+
+p {
+  padding: 10px; }
+
+.btn {
+  background-color: #18bc9c;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 10px;
+  margin: 0px auto;
+  display: block; }
+
+.contact {
+  padding: 40px; }
+  .contact p {
+    text-align: center; }
+
+input, textarea {
+  display: block;
+  width: 100%;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 20px 0px; }
+
+::placeholder {
+  color: #495057; }
+
+button {
+  padding: 10px 15px;
+  background-color: #18bc9c;
+  border: 1px solid #18bc9c;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold; }
+
+footer {
+  text-align: center;
+  color: white;
+  background-color: #2c3e50;
+  padding: 60px; }
+  footer h3 {
+    padding: 40px 0px; }
+  footer p {
+    padding: 20px; }
+
+.circle {
+  border: 1px solid white;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  padding: 10px; }
+
+span {
+  color: grey;
+  font-size: 14px; }
+
+.social {
+  padding-top: 20px; }
+
+/*# sourceMappingURL=main.css.map */

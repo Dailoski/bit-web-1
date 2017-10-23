@@ -1,0 +1,28 @@
+footer{
+    text-align: center;
+    color: white;
+    background-color: $Blueish;
+    padding:60px;
+    h3{
+        padding: 40px 0px;
+        
+    }
+    p{
+        padding: 20px;
+    }
+}
+.circle{
+    border: 1px solid white;
+    width:56px;
+    height: 56px;
+    border-radius: 28px;
+    padding: 10px;
+
+}
+span{
+    color:grey;
+    font-size: 14px;
+}
+.social{
+    padding-top: 20px;
+}
