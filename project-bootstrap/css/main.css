@@ -35,6 +35,11 @@ header {
       padding: 20px; }
     header .profile p {
       padding: 20px; }
+    header .profile .arrow {
+      width: 60px;
+      position: fixed;
+      right: 20px;
+      top: 400px; }
   @media (min-width: 768px) {
     header .profile h1 {
       font-size: 4em;
@@ -82,11 +87,13 @@ input, textarea {
   width: 100%;
   margin: 10px;
   border: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgba(73, 80, 87, 0.5);
   padding: 20px 0px; }
 
 ::placeholder {
-  color: #495057; }
+  color: rgba(73, 80, 87, 0.5);
+  font-weight: 700;
+  font-size: 1.3em; }
 
 button {
   padding: 10px 15px;
