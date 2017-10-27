@@ -1,0 +1,9 @@
+.black{
+    background-color: black;
+}
+
+button{
+    background-color: red;
+    padding: 10px 20px;
+    color: white;
+}
