@@ -1,0 +1,11 @@
+.container-fluid{
+    padding: 0;
+}
+.card{
+    margin: 20px;
+}
+
+h1{
+    text-align: center;
+    padding: 40px;
+}
