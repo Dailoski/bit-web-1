@@ -1,0 +1,23 @@
+{
+  "name": "bit-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programarina/bit-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/programarina/bit-web/issues"
+  },
+  "homepage": "https://github.com/programarina/bit-web#readme",
+  "dependencies": {
+    "os": "^0.1.1",
+    "systeminformation": "^3.33.2"
+  }
+}
