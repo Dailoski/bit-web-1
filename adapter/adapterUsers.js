@@ -4,7 +4,7 @@ import Things from './things';
 
 class UserThings {
 
-    getThings(nameSearch, handler) {
+    getThings(handler) {
 
         new Users().getUsers(function (items) {
             var arr = [];

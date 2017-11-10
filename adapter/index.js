@@ -1,21 +1,26 @@
 import UserThings from './adapterUsers';
 import ReposThings from './adapterRepos';
 
-class Data{
-    constructor(name){
-        this.name = name;
-    }
+let outputElement = $('<ul>');
+function run() {
+    new UserThings().getThings(function (data) {
 
-    run(name) {
-        
-        new UserThings().getThings(name, function(data){
-            console.log(data);
+        data.forEach(function (element) {
+            let listElement = $('<li>');
+
+            let name = element.name;
+            let avatar = element.avatar;
+            let img = $('<img>');
+            img.attr('src', avatar);
+            listElement.text(name);
+            listElement.append(img);
+            outputElement.append(listElement);
         });
-    }
+
+        $('div').append(outputElement);
+        console.log(data);
+    });
+
 }
 
-let marko = new Data('Marko');
-marko.run();
-
-
-
+run();
