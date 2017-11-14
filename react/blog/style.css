@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Oxygen', sans-serif;
+}
+.container-fluid{
+    width: 100%;
+    background-color: rgb(43, 38, 38);
+}
+header{
+    margin: 0px auto;
+    width: 80%;
+
+}
+header h1{
+    text-align: right;
+    color: greenyellow;
+    padding: 50px;
+
+}
+
+nav ul li{
+    list-style: none;
+    color: white;
+    display: inline-block;
+    padding: 25px;
+}
+
+li a {
+    color: white;
+    margin: 10px;
+}
+
+li a:hover{    
+    border-bottom: 2px solid greenyellow;
+    text-decoration: none;
+    padding: 20px;
+    margin: 10px;
+    color: white;
+}
+.main{
+    padding: 50px;
+
+}
+.card{
+    margin: 20px;
+}
+.card-title{
+    font-size: 1.6em;
+}
+.card-text{
+    font-size: 1em;
+}
+.about{
+    height: 600px;
+    width: 100%;
+    padding: 50px;
+}
+.btn-primary{
+    background-color: rgb(116, 184, 8);
+    border: none;
+}
+.footer{
+    background-color: rgb(43, 38, 38);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    
+}
