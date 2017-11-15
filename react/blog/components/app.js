@@ -1,10 +1,11 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./header";
 import Main from "./main";
-import About from './about';
-import Authors from './authors';
+import About from "./about";
+import  MainListOfAuthors from "./authors";
 import Footer from "./footer";
+// import SinglePost from "./singlepost";
 
 class App extends React.Component {
     render() {
@@ -12,9 +13,10 @@ class App extends React.Component {
             <div>
                 <Header />
                 <Switch>
-                    <Route exact path="/" component={Main} />
+                    <Route path="/posts" component={Main} />
+                    <Redirect exact from="/" to="/posts" />
                     <Route path="/about" component={About} />
-                    <Route path="/authors" component={Authors} />
+                    <Route path="/authors" component={MainListOfAuthors} />
                 </Switch>
                 <Footer />
             </div>

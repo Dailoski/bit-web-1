@@ -1,16 +1,17 @@
 import React from "react";
-import Posts from "./post";
-
+import MainPosts from "./post";
+import OnePostByAuthor from "./singlepost";
+import { Switch, Route } from "react-router-dom";
 
 
 const Main = (props) => {
 
     return (
-        <div className="container">
-            <div className="row main">
-                <Posts />
-            </div>
-        </div>
+        <Switch>
+            <Route exact path="/posts" component={MainPosts} />
+            <Route path="/posts/:id" component={OnePostByAuthor} />
+        </Switch>
+
     );
 };
 

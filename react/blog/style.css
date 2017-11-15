@@ -15,25 +15,28 @@ header{
 
 }
 header h1{
-    text-align: right;
     color: greenyellow;
     padding: 50px;
 
 }
-
+nav{
+    text-align: right;
+}
 nav ul li{
     list-style: none;
     color: white;
     display: inline-block;
-    padding: 25px;
+    padding-top: 50px;
+    margin: 10px;
+    
 }
 
-li a {
+nav li a {
     color: white;
     margin: 10px;
 }
 
-li a:hover{    
+nav li a:hover{    
     border-bottom: 2px solid greenyellow;
     text-decoration: none;
     padding: 20px;
@@ -58,9 +61,25 @@ li a:hover{
     width: 100%;
     padding: 50px;
 }
-.btn-primary{
+ .btn-primary{
     background-color: rgb(116, 184, 8);
     border: none;
+}
+.btn-primary a{
+    color: white;
+}
+.btn-primary a:hover{
+    color: white;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: rgb(79, 126, 4);
+}
+
+
+.usrename{
+    list-style: none;
+
 }
 .footer{
     background-color: rgb(43, 38, 38);
@@ -68,4 +87,32 @@ li a:hover{
     text-align: center;
     padding: 40px;
     
+}
+.authorName{
+    list-style: none;
+    text-align: center;
+
+}
+.authorName > li{
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+h2{
+    text-align: center;
+    padding: 30px;
+}
+
+.listOfPosts{
+    margin: 0px auto;
+    padding-top: 25px;
+    border-top: 1px solid black; 
+
+}
+
+.authorNameItem{
+    color:black;
+}
+.authorPage{
+    text-align: center;
 }
