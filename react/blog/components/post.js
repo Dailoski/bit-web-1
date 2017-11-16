@@ -45,8 +45,17 @@ class Posts extends React.Component {
 
     render() {
 
+        if (this.state.data.length === 0) {
+            return (
+                <div>Post not found
+                    <Search useSearchString={this.searchTitles} />
+
+                </div>);
+        }
+
         return (
-            <div>
+
+            <div className="row main">
                 <Search useSearchString={this.searchTitles} />
                 {this.state.data.map((element) => <Post element={element} key={element.id} />)}
             </div>
@@ -61,9 +70,7 @@ const MainPosts = (props) => {
     return (
 
         <div className="container">
-            <div className="row main">
-                <Posts />
-            </div>
+            <Posts />
         </div>
     );
 };
