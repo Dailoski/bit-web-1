@@ -2,7 +2,7 @@ import React from 'react';
 
 const SinglePost = (props) => {
     return (
-        <div>
+        <div className='row'>
             <h2>{props.title}</h2>
             <p>{props.body}</p>
         </div>
@@ -10,9 +10,7 @@ const SinglePost = (props) => {
 };
 
 const PostsByAuthor = (props) => {
-    return (
-        <p className='listOfPosts col-6 offsett-3'>{props.title}</p>
-    );
+    return (<p className='listOfPosts col-6 offsett-3'>{props.title}</p>);
 };
 
 class ListOfPosts extends React.Component {
@@ -34,7 +32,7 @@ class ListOfPosts extends React.Component {
             return <h1>loading</h1>;
         }
         return (
-            this.state.data.map((element) => <PostsByAuthor title={element.title} key={element.id} />));
+            this.state.data.map((element) => <PostsByAuthor title={element.title} key={element.id} />)).slice(0,3);
 
     }
 }
@@ -53,6 +51,8 @@ class OnePostByAuthor extends React.Component {
             .catch(error => {
                 console.log(error);
             });
+
+        
     }
 
     render() {
@@ -60,8 +60,9 @@ class OnePostByAuthor extends React.Component {
             return <h1>loading</h1>;
         }
         return (
-            <div>
+            <div className='container'>
                 <SinglePost title={this.state.data.title} body={this.state.data.body} />
+                <h4>3 more posts from same author</h4>
                 <ListOfPosts userId={this.state.data.userId} />
             </div>
         );

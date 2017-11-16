@@ -24,21 +24,21 @@ class AuthorsInfo extends React.Component {
             <div className='authorPage container'>
                 <div className='row'>
                     <div className='col-6'>
-                        <img src="https://images.unsplash.com/photo-1451324119451-db0ac857463c?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" height="200px" />
+                        <img src="https://images.unsplash.com/photo-1451324119451-db0ac857463c?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" height="300px" />
+                    </div>
+                    <div className='col-6'>
                         <h2>{this.state.data.name}</h2>
-                        <li>Email: {this.state.data.email}</li>
-                        <li>phone: {this.state.data.phone}</li>
-                    </div>
-                    <div className='col-6'>
+                        <p><strong>email:</strong> {this.state.data.email}<br />
+                            <strong>phone:</strong> {this.state.data.phone}</p>
+                
                         <h3>Address</h3>
-                        <li>street:{this.state.data.address.street}</li>
-                        <li>zipcode:{this.state.data.address.zipcode}</li>
-                        <li>city:{this.state.data.address.city}</li>
-                    </div>
-                    <div className='col-6'>
+                        <p><strong>street:</strong> {this.state.data.address.street}<br />
+                            <strong>zipcode: </strong>{this.state.data.address.zipcode}<br />
+                            <strong>city: </strong>{this.state.data.address.city}</p>
+                    
                         <h3>Company</h3>
-                        <li>Name:{this.state.data.company.name}</li>
-                        <li>slogan:{this.state.data.company.catchPhrase}</li>
+                        <p><strong>name:</strong> {this.state.data.company.name}<br />
+                            <strong>slogan:</strong><em> {this.state.data.company.catchPhrase}</em></p>
                     </div>
                 </div>
             </div>
