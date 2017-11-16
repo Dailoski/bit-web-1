@@ -47,7 +47,7 @@ class Posts extends React.Component {
 
         return (
             <div>
-                <Search useSearchString={this.searchTitles} className='col-3' />
+                <Search useSearchString={this.searchTitles} />
                 {this.state.data.map((element) => <Post element={element} key={element.id} />)}
             </div>
         );
