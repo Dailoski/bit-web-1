@@ -1,5 +1,5 @@
 import React from "react";
-
+import ButtonBack from './buttonBack';
 
 
 class AuthorsInfo extends React.Component {
@@ -22,7 +22,9 @@ class AuthorsInfo extends React.Component {
         }
         return (
             <div className='authorPage container'>
+                <div className='row'><ButtonBack/></div>
                 <div className='row'>
+
                     <div className='col-6'>
                         <img src="https://images.unsplash.com/photo-1451324119451-db0ac857463c?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" height="300px" />
                     </div>

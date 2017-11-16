@@ -11,7 +11,6 @@ const Post = (props) => {
                 <h4 className="card-title">{props.element.title}</h4>
                 <p className="card-text">{props.element.body}</p>
                 <p className="btn btn-primary"><Link to={`/posts/${props.element.id}`}>Read more</Link></p>
-
             </div>
         </div>
     );
@@ -25,31 +24,41 @@ class Posts extends React.Component {
         this.searchTitles = this.searchTitles.bind(this);
     }
 
-
-    componentDidMount() {
+    getPostsData() {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((result) => result.json())
             .then((result) => this.setState({ data: result }));
     }
 
+
+
+    componentDidMount() {
+        this.getPostsData();
+    }
+
     searchTitles(title) {
         let a = [];
-        for (let i = 0; i < this.state.data.length; i++) {
-            const element = this.state.data[i];
-            if (element.title.includes(title)) {
-                a.push(element);
+        if (title === '') {
+            this.getPostsData();
+        } else {
+            for (let i = 0; i < this.state.data.length; i++) {
+                const element = this.state.data[i];
+                if (element.title.includes(title)) {
+                    a.push(element);
+                }
             }
+            this.setState({ data: a });
         }
-        this.setState({ data: a });
+
     }
 
     render() {
 
         if (this.state.data.length === 0) {
             return (
-                <div>Post not found
+                <div>
+                    <p>Post not found</p>
                     <Search useSearchString={this.searchTitles} />
-
                 </div>);
         }
 

@@ -26,7 +26,7 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='col-12 searchPosts'>
                 Search posts: <input type='text' value={this.state.searchString} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
 
                 {/* <button onClick={this.handleClick}>Search posts</button> */}

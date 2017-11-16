@@ -5,7 +5,6 @@ import Main from "./main";
 import About from "./about";
 import  MainListOfAuthors from "./authors";
 import Footer from "./footer";
-// import SinglePost from "./singlepost";
 
 class App extends React.Component {
     render() {

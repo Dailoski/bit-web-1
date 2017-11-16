@@ -6,16 +6,7 @@ import { Switch, Route } from "react-router-dom";
 
 class ListOfAuthors extends React.Component {
     render() {
-        return (
-            <div className='container'>
-                <div className='row'>
-                    <h2 className='col-12'>Authors</h2>
-                    <ul className='col-6 offset-3 authorName'>
-                        <Authors />
-                    </ul>
-                </div>
-            </div>
-        );
+        return (<Authors />);
     }
 }
 
