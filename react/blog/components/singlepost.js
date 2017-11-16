@@ -4,6 +4,7 @@ const SinglePost = (props) => {
     return (
         <div className='row'>
             <h2>{props.title}</h2>
+            {/* <h3>{props.name}</h3> */}
             <p>{props.body}</p>
         </div>
     );
@@ -16,12 +17,20 @@ const PostsByAuthor = (props) => {
 class ListOfPosts extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { data: null };
+        this.state = { data: null, user:null};
     }
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/posts?userId=' + this.props.userId)
             .then((result) => result.json())
-            .then((result) => this.setState({ data: result }))
+            .then((result) => {
+                this.setState({ data: result });
+                // fetch('https://jsonplaceholder.typicode.com/users/' + this.state.data[0].userId)
+                //     .then((user) => user.json())
+                //     .then((user) => this.setState({ user: user }))
+                //     .catch(error => {
+                //         console.log(error);
+                //     });
+            })
             .catch(error => {
                 console.log(error);
             });
@@ -32,7 +41,7 @@ class ListOfPosts extends React.Component {
             return <h1>loading</h1>;
         }
         return (
-            this.state.data.map((element) => <PostsByAuthor title={element.title} key={element.id} />)).slice(0,3);
+            this.state.data.map((element) => <PostsByAuthor title={element.title} key={element.id} />)).slice(0, 3);
 
     }
 }
@@ -42,7 +51,10 @@ class ListOfPosts extends React.Component {
 class OnePostByAuthor extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { data: null };
+        this.state = { 
+            data: null,
+            user: null 
+        };
     }
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/posts/' + this.props.match.params.id)
@@ -52,7 +64,7 @@ class OnePostByAuthor extends React.Component {
                 console.log(error);
             });
 
-        
+
     }
 
     render() {
