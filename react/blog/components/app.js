@@ -5,6 +5,8 @@ import Main from "./main";
 import About from "./about";
 import  MainListOfAuthors from "./authors";
 import Footer from "./footer";
+import CreatePostPage from "./createPostPage";
+
 
 class App extends React.Component {
     render() {
@@ -16,6 +18,7 @@ class App extends React.Component {
                     <Redirect exact from="/" to="/posts" />
                     <Route path="/about" component={About} />
                     <Route path="/authors" component={MainListOfAuthors} />
+                    <Route path='/create' component={CreatePostPage}/>
                 </Switch>
                 <Footer />
             </div>

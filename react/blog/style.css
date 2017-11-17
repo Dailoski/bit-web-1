@@ -172,3 +172,20 @@ h2{
     box-shadow: 0 5px #666;  
 }
 
+.createPost {
+    padding: 40px;
+}
+.createPost label{
+    padding-top: 10px;
+    color: rgb(35, 169, 173);
+}
+.createPost button, input,textarea{
+    margin:5px;
+    background-color: white;
+    color: rgb(35, 169, 173);
+    /* border: 1px solid rgb(104, 99, 99); */
+    border: none;
+    box-shadow: 0px 1px 1px rgb(54, 53, 53);
+    border-radius: 5px;
+    padding: 4px;
+}

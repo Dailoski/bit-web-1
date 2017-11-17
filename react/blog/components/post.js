@@ -38,7 +38,7 @@ class Posts extends React.Component {
 
     searchTitles(title) {
         let a = [];
-        if (title === '') {
+        if (title === "") {
             this.getPostsData();
         } else {
             for (let i = 0; i < this.state.data.length; i++) {
@@ -52,21 +52,33 @@ class Posts extends React.Component {
 
     }
 
-    render() {
 
-        if (this.state.data.length === 0) {
+    render() {
+   
+        if ( this.state.data.length === 0 && JSON.parse(localStorage.getItem("post")) === null) {
             return (
                 <div>
                     <p>Post not found</p>
                     <Search useSearchString={this.searchTitles} />
                 </div>);
         }
+        var nizovi = [];
+        if (this.state.data === 0) {
+            nizovi = JSON.parse(localStorage.getItem("post"));
+        }
+        if (JSON.parse(localStorage.getItem("post"))===null) {
+            nizovi = this.state.data;
+        }
+        if (this.state.data.length>0&&!(JSON.parse(localStorage.getItem("post"))===null)) {
+            nizovi = JSON.parse(localStorage.getItem("post")).concat(this.state.data);
+        }
 
         return (
 
             <div className="row main">
                 <Search useSearchString={this.searchTitles} />
-                {this.state.data.map((element) => <Post element={element} key={element.id} />)}
+
+                {nizovi.map((element) => <Post element={element} key={element.id} />)}
             </div>
         );
     }
