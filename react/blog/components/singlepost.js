@@ -14,7 +14,6 @@ const SinglePost = (props) => {
 
 
 const PostsByAuthor = (props) => {
-    console.log(props);
     return (<p className='listOfPosts col-6 offset-3'><Link to={`/posts/${props.id}`}>{props.title}</Link></p>);
 };
 
@@ -57,8 +56,21 @@ class OnePostByAuthor extends React.Component {
             data: null,
             user: null
         };
+        this.showPostData = this.showPostData.bind(this);
     }
     componentDidMount() {
+        let postId = this.props.match.params.id;
+        this.showPostData(postId);
+    }
+
+    componentWillReceiveProps(nextProps){
+        let postId = nextProps.match.params.id;
+        // console.log("props: " + nextProps);
+        this.showPostData(postId);
+    
+    }
+
+    showPostData(postId){
         let boo = true;
         let niz = JSON.parse(localStorage.getItem("post"));
        
@@ -66,7 +78,7 @@ class OnePostByAuthor extends React.Component {
             for (let i = 0; i < niz.length; i++) {
                 const element = niz[i];
                 
-                if (element.id == this.props.match.params.id) {
+                if (element.id == postId) {
                    
                     this.setState({
                         data: element,
@@ -77,8 +89,9 @@ class OnePostByAuthor extends React.Component {
                 }
             }
         }
+
         if (boo) {
-            fetch('https://jsonplaceholder.typicode.com/posts/' + this.props.match.params.id)
+            fetch('https://jsonplaceholder.typicode.com/posts/' + postId)
                 .then((result) => result.json())
                 .then((result) => {
                     this.setState({ data: result });
@@ -97,6 +110,8 @@ class OnePostByAuthor extends React.Component {
 
         }
     }
+
+
 
     render() {
         if (!this.state.data || !this.state.user) {

@@ -30,7 +30,7 @@ class CreatePostPage extends React.Component {
             .then(function (data) {
                 if (localStorage.getItem("post")) {
                     let niz = JSON.parse(localStorage.getItem("post"));
-                    niz.push(data);
+                    niz.unshift(data);
                     localStorage.setItem("post", JSON.stringify(niz));
                     console.log(JSON.parse(localStorage.getItem("post")));
                 } else {
