@@ -10,7 +10,8 @@ class CreatePostPage extends React.Component {
 
     menagePost(title, body) {
         if (title === "" || body === "") {
-            alert("POLJA NE SMEJU BITI PRAZNA!!!");
+            alert("Please insert data.");
+            throw new Error("Input fileds are empty.");
             return;
         }
 
@@ -39,7 +40,7 @@ class CreatePostPage extends React.Component {
                     localStorage.setItem("post", JSON.stringify(niz));
                 }
             }).then(() => {
-                window.location.href = "http://localhost:8080/#/posts";
+                window.location.href = "#/posts";
                
             })
             .catch(function (error) {
@@ -49,7 +50,7 @@ class CreatePostPage extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='container  createPostPage'>
                 <CreatePostForm useCreatedPost={this.menagePost} />
             </div>
         );

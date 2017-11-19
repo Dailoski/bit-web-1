@@ -54,23 +54,25 @@ class Posts extends React.Component {
 
 
     render() {
-   
-        if ( this.state.data.length === 0 && JSON.parse(localStorage.getItem("post")) === null) {
+        let arrState = this.state.data;
+        let arrStorage = JSON.parse(localStorage.getItem("post"));
+
+        if (arrState.length === 0 && arrStorage === null) {
             return (
                 <div>
                     <p>Post not found</p>
                     <Search useSearchString={this.searchTitles} />
                 </div>);
         }
-        var nizovi = [];
-        if (this.state.data === 0) {
-            nizovi = JSON.parse(localStorage.getItem("post"));
+        var arrs = [];
+        if (arrState === 0) {
+            arrs = arrStorage;
         }
-        if (JSON.parse(localStorage.getItem("post"))===null) {
-            nizovi = this.state.data;
+        if (arrStorage === null) {
+            arrs = arrState;
         }
-        if (this.state.data.length>0&&!(JSON.parse(localStorage.getItem("post"))===null)) {
-            nizovi = JSON.parse(localStorage.getItem("post")).concat(this.state.data);
+        if (arrState.length > 0 && arrStorage !== null) {
+            arrs = arrStorage.concat(arrState);
         }
 
         return (
@@ -78,7 +80,7 @@ class Posts extends React.Component {
             <div className="row main">
                 <Search useSearchString={this.searchTitles} />
 
-                {nizovi.map((element) => <Post element={element} key={element.id} />)}
+                {arrs.map((element) => <Post element={element} key={element.id} />)}
             </div>
         );
     }
