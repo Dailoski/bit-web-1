@@ -103,6 +103,10 @@ nav li a:hover{
     color: rgb(47, 248, 255);
  
 }
+.footer a{
+    text-decoration: none;
+    color: white;
+}
 .authorName{
     list-style: none;
     text-align: center;
@@ -135,18 +139,21 @@ h2{
 
 .authorPage{
     padding: 100px;
-    height: 600px;
+    height: 650px;
 }
 
 .authorPage img{
     width: 100%;
+}
+.Authors{
+    height: 600px;
 }
 .searchPosts input{
     width: 95%;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 2px 2px 4px white;
-    background-color: rgb(41, 192, 197);
+    background-color: rgb(47, 248, 255);
     color: black;
     border: none;
 }
@@ -191,3 +198,4 @@ h2{
 .createPostPage{
     height: 600px;
 }
+

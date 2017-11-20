@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Search from './search';
+import React from "react";
+import { Link } from "react-router-dom";
+import Search from "./search";
+import { BASE_URL } from "./constants";
 
 const Post = (props) => {
     return (
@@ -18,70 +19,71 @@ const Post = (props) => {
 class Posts extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { data: [] };
+        this.state = {
+            serverData: [],
+            storageData: [],
+            data: []
+        };
         this.searchTitles = this.searchTitles.bind(this);
-    }
-    getPostsData() {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((result) => result.json())
-            .then((result) => this.setState({ data: result }));
-    }
-    componentDidMount() {
-        this.getPostsData();
-    }
-    searchTitles(title) {
-        if (title === "") {
-            this.getPostsData();
-        } else {
-            let a = [];
-            for (let i = 0; i < this.state.data.length; i++) {
-                const element = this.state.data[i];
-                if (element.title.includes(title)) {
-                    a.push(element);
-                }
-            }
-            
-            this.setState({ data: a });
-            let niz = JSON.parse(localStorage.getItem("post"));
-            let b = [];
-            for (let i = 0; i < niz.length; i++) {
-                const element2 = niz[i];        
-                if (element2.title.includes(title)) {
-                    b.push(element2);
-                }
-            }
-            niz = b;
-            this.setState({data: niz});       
-        }
+        this.getPostsDataFromServer = this.getPostsDataFromServer.bind(this);
+        this.getPostsDataFromStorage = this.getPostsDataFromStorage.bind(this);
+        this.summArrays = this.summArrays.bind(this);
+        
 
     }
+
+    getPostsDataFromServer() {
+        fetch(BASE_URL + "posts")
+            .then((result) => result.json())
+            .then((result) => {
+                this.setState({ serverData: result });
+                this.summArrays();
+            });
+        
+    }
+
+    getPostsDataFromStorage() {
+        let storageArr = JSON.parse(localStorage.getItem("post"));
+
+        this.setState({ storageData: storageArr });
+        this.summArrays();  
+    }
+
+    summArrays() {
+        let summArrays = this.state.storageData.concat(this.state.serverData);
+        this.setState({ data: summArrays });
+    }
+
+    componentDidMount() {
+        this.getPostsDataFromStorage();
+        this.getPostsDataFromServer();
+    }
+
+
+    searchTitles(title) {
+        this.summArrays();
+        let filterPosts = [];
+        if (title === "") {
+            return;
+        } else {
+            this.state.data.forEach(element => {
+                if (element.title.includes(title)) {
+                    filterPosts.unshift(element);
+                }
+            });
+
+            this.setState({ data: filterPosts });
+         
+        }
+    }
+
     render() {
-        let arrState = this.state.data;
-        let arrStorage = JSON.parse(localStorage.getItem("post"));
-        if (arrState.length === 0 && arrStorage === null) {
-            return (
-                <div>
-                    <p>Post not found</p>
-                    <Search useSearchString={this.searchTitles} />
-                </div>);
-        }
-        var arrs = [];
-        if (arrState === 0) {
-            arrs = arrStorage;
-        }
-        if (arrStorage === null) {
-            arrs = arrState;
-        }
-        if (arrState.length > 0 && arrStorage !== null) {
-            arrs = arrStorage.concat(arrState);
-        }
 
         return (
 
             <div className="row main">
                 <Search useSearchString={this.searchTitles} />
-
-                {arrs.map((element) => <Post element={element} key={element.id} />)}
+                {this.state.data.map((element) => <Post element={element} key={element.id} />)}
             </div>
         );
     }
@@ -89,7 +91,7 @@ class Posts extends React.Component {
 }
 
 
-const MainPosts = (props) => {
+const MainPosts = () => {
 
     return (
 

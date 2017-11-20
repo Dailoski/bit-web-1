@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
+import {Link} from "react-router-dom";
 
-const Footer = (props) => {
+
+const Footer = () => {
     return (
         <div className="container-fluid footer">
             <div className='row'>
-                <h1 className='col-12'>BLOG</h1>
+                <h1 className='col-12'><Link to='/'>BLOG</Link></h1>
                 <p className='col-12'>copyright BitSchool</p>
             </div>
         </div>

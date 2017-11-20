@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from './constants';
 
 const SinglePost = (props) => {
     return (
@@ -18,15 +19,13 @@ const PostsByAuthor = (props) => {
 };
 
 
-
-
 class ListOfPosts extends React.Component {
     constructor(props) {
         super(props);
         this.state = { data: null };
     }
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts?userId=' + this.props.userId)
+        fetch(BASE_URL + 'posts?userId=' + this.props.userId)
             .then((result) => result.json())
             .then((result) => {
                 this.setState({ data: result });
@@ -63,23 +62,19 @@ class OnePostByAuthor extends React.Component {
         this.showPostData(postId);
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         let postId = nextProps.match.params.id;
-        // console.log("props: " + nextProps);
         this.showPostData(postId);
-    
     }
 
-    showPostData(postId){
+    showPostData(postId) {
         let boo = true;
         let niz = JSON.parse(localStorage.getItem("post"));
-       
+
         if (niz) {
             for (let i = 0; i < niz.length; i++) {
                 const element = niz[i];
-                
                 if (element.id == postId) {
-                   
                     this.setState({
                         data: element,
                         user: element.userId
@@ -91,12 +86,12 @@ class OnePostByAuthor extends React.Component {
         }
 
         if (boo) {
-            fetch('https://jsonplaceholder.typicode.com/posts/' + postId)
+            fetch(BASE_URL + 'posts/' + postId)
                 .then((result) => result.json())
                 .then((result) => {
                     this.setState({ data: result });
 
-                    fetch('https://jsonplaceholder.typicode.com/users/' + result.userId)
+                    fetch(BASE_URL + 'users/' + result.userId)
                         .then((user) => user.json())
                         .then((user) => this.setState({ user: user }))
                         .catch(error => {
@@ -111,14 +106,12 @@ class OnePostByAuthor extends React.Component {
         }
     }
 
-
-
     render() {
         if (!this.state.data || !this.state.user) {
             return <h1>loading</h1>;
         }
         return (
-            <div className='container'>
+            <div className='container singlePost'>
                 <SinglePost title={this.state.data.title} body={this.state.data.body} name={this.state.user.name} />
                 <ListOfPosts userId={this.state.data.userId} />
             </div>

@@ -8,7 +8,7 @@ const Header = (props) => {
         <div className="container-fluid">
             <header>
                 <div className='row'>
-                    <h1 className='col-6'><a href="#">BitSchool Blog</a></h1>
+                    <h1 className='col-6'><Link to='/'>BitSchool Blog</Link></h1>
                     <nav className='col-6'>
                         <ul>
                             <li><Link to='/'>Home</Link></li>

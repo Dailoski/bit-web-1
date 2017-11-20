@@ -1,5 +1,6 @@
 import React from "react";
 import CreatePostForm from "./createPostForm";
+import {BASE_URL} from './constants';
 
 class CreatePostPage extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class CreatePostPage extends React.Component {
             return;
         }
 
-        fetch('https://jsonplaceholder.typicode.com/posts', {
+        fetch(BASE_URL + 'posts', {
             method: "POST",
             body: JSON.stringify({
                 id: Math.round((Math.random() * 1000) + 1000),
@@ -33,7 +34,7 @@ class CreatePostPage extends React.Component {
                     let niz = JSON.parse(localStorage.getItem("post"));
                     niz.unshift(data);
                     localStorage.setItem("post", JSON.stringify(niz));
-                    console.log(JSON.parse(localStorage.getItem("post")));
+                    // console.log(JSON.parse(localStorage.getItem("post")));
                 } else {
                     let niz = [];
                     niz.push(data);

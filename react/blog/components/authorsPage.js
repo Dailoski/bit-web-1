@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonBack from './buttonBack';
+import {BASE_URL} from './constants';
 
 
 class AuthorsInfo extends React.Component {
@@ -7,8 +8,9 @@ class AuthorsInfo extends React.Component {
         super(props);
         this.state = { data: null };
     }
+    
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users/' + this.props.match.params.id)
+        fetch(`${BASE_URL}users/${this.props.match.params.id}`)
             .then((result) => result.json())
             .then((result) => this.setState({ data: result }))
             .catch(error => {
@@ -30,7 +32,8 @@ class AuthorsInfo extends React.Component {
                     </div>
                     <div className='col-6'>
                         <h2>{this.state.data.name}</h2>
-                        <p><strong>email:</strong> {this.state.data.email}<br />
+                        <p><strong>user name:</strong> {this.state.data.username}<br />
+                            <strong>email:</strong> {this.state.data.email}<br />
                             <strong>phone:</strong> {this.state.data.phone}</p>
                 
                         <h3>Address</h3>

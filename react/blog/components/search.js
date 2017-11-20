@@ -18,7 +18,9 @@ class Search extends React.Component {
     }
 
     handleClick() {   
-        this.props.useSearchString(this.state.searchString);
+        let searchString = this.state.searchString;
+        
+        this.props.useSearchString(searchString);
     }
 
     handleChange(event) {
@@ -27,7 +29,7 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div className='col-12'>
+            <div className='col-12 searchPosts'>
                 Search posts: <input type='text' value={this.state.searchString} onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
 
                 {/* <button onClick={this.handleClick}>Search posts</button> */}
